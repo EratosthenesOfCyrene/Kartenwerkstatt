@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die Kartenwerkstatt</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css_files/success_alert.css">
+    <link rel="stylesheet" href="css_files/carousel.css">
+    <link rel="stylesheet" href="css_files/img-fullscreen.css">
+    <link rel="stylesheet" href="css_files/form.css">
+    <link rel="stylesheet" href="css_files/about-me.css">
+    <link rel="stylesheet" href="css_files/services.css">
+    <link rel="stylesheet" href="css_files/contact.css">
+    <link rel="stylesheet" href="css_files/general-styles.css">
+    <script src="script.js" defer></script>
+    <script src="js-files/form.js" defer></script>
+    <script src="js-files/include.js" defer></script>
+    <script src="js-files/carousel.js" defer></script>
+
+</head>
+
+<body>
+    <nav id="navBar" class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a onclick="showForm()" href="#">Auftragsanfrage</a></li>
+            <li class="nav-item"><a href="#">Services</a></li>
+            <li class="nav-item"><a href="#">Über mich</a></li>
+            <li class="nav-item"><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-div">
+        <div class="die-div">
+            Die
+        </div>
+        <h1>Kartenwerkstatt</h1>
+    </div>
+
+    <div class="carousel">
+        <div class="carousel-slide-outer">
+            <div class="carousel-shadow-layer"></div>
+            <div class="carousel-slide-btn-div">
+                <button class="carousel-btn left" aria-label="Vorheriger Slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="carousel-slide-small">
+                    <img class="carousel-slide-small-img-outer" src="" alt="">
+                </div>
+                <div class="carousel-slide-small">
+                    <img class="carousel-slide-small-img-inner" src="" alt="">
+                </div>
+                <div class="carousel-slide">
+                    <div id="slideImgDiv" class="image-div">
+                        <button onclick="loadFullscreen()" class="carousel-btn zoom-btn">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <!-- Pfeil oben rechts -->
+                                <path d="M14 3h7v7M21 3l-8 8" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+
+                                <!-- Pfeil unten links -->
+                                <path d="M10 21H3v-7M3 21l8-8" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <img class="slide-img" src="img/karten_imgs/wegbeschreibungen.jpg" alt="">
+                    </div>
+                    <div class="slide-txt-div">
+                        <p class="slide-txt">Karten für wissenschaftliche Publikationen</p>
+                        <button class="slide-txt-btn">mehr erfahren</button>
+                    </div>
+
+                </div>
+                <div class="carousel-slide-small">
+                    <img class="carousel-slide-small-img-inner" src="" alt="">
+                </div>
+                <div class="carousel-slide-small">
+                    <img class="carousel-slide-small-img-outer" src="" alt="">
+                </div>
+                <button class="carousel-btn right" aria-label="Nächster Slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <button onclick="showForm()" class="cta-btn cta-btn-carousel">Auftrag anfragen</button>
+        </div>
+
+        <div class="carousel-slide-outer d-none">
+            <div class="carousel-slide d-none">
+                <div class="image-div">
+                    <img class="slide-img" src="" alt="">
+                </div>
+                <p class="slide-txt">Karten für wissenschaftliche Publikationen</p>
+            </div>
+        </div>
+
+        <div class="carousel-slide-outer d-none">
+            <div class="carousel-slide d-none">
+                <div class="image-div">
+                    <img class="slide-img" src="" alt="">
+                </div>
+                <p class="slide-txt">Karten für wissenschaftliche Publikationen</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div id="fullscreemImgDivOuter" class="fullscreen-img-div-outer d-none">
+
+        <div class="fullscreen-img-div-inner">
+            <button onclick="closeFullscreen()" class="carousel-btn close-btn" aria-label="Vollansicht schließen">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <img id="fulscreenImg" class="fullscreen-img" src="" alt="">
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- FORMULAR MODAL -->
+    <div itemid="formOverlay" class="form-overlay" id="formOverlay" aria-hidden="true">
+        <div id="formModal" class="form-modal" role="dialog" aria-modal="true">
+            <!-- FORM -->
+            <div id="formContent" class="form-content">
+                <button onclick="hideForm()" class="form-close" aria-label="Formular schließen">×</button>
+
+                <h2>Kostenloses Erstgespräch</h2>
+                <p>Beschreiben Sie kurz Ihr Projekt – ich melde mich zeitnah.</p>
+
+                <!-- <form https://formspree.io/f/mbdgwwwo" method="POST"> -->
+                <form id="contactForm" action="https://formspree.io/f/mbdgwwwo" method="POST">
+
+                    <!-- Formspree Meta -->
+                    <input type="hidden" name="_subject" value="Neue Anfrage – Kartenprojekt">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_gotcha" style="display:none">
+                    <!-- Success Formular wen das Übermitteln der Daten geklappt hat -->
+                    <input type="hidden" value="https://deinedomain.de/danke.html">
+
+                    <fieldset class="form-group">
+                        <legend>Die Karte soll...</legend>
+
+                        <label class="check-option">
+                            <input type="checkbox" name="kartenart[]" value="Für Druckwerk">
+                            <span class="custom-check"></span>
+                            in einem Druckwerk erscheinen
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" name="kartenart[]" value="Für Online">
+                            <span class="custom-check"></span>
+                            digital veröffentlicht werden
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <legend>Benötigte Kartenelemente</legend>
+
+                        <label class="check-option">
+                            <input type="checkbox" name="benötigte_kartenelemente[]" value="Legende">
+                            <span class="custom-check"></span>
+                            Legende
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" name="benötigte_kartenelemente[]" value="Nordpfeil">
+                            <span class="custom-check"></span>
+                            Nordpfeil
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" name="benötigte_kartenelemente[]" value="Kaßstab">
+                            <span class="custom-check"></span>
+                            Maßstab
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" name="benötigte_kartenelemente[]" value="Beschriftung">
+                            <span class="custom-check"></span>
+                            Beschriftung
+                        </label>
+
+                        <div class="check-with-input">
+                            <input type="checkbox" id="sonstiges" name="benötigte_kartenelemente[]" value="sonstiges">
+
+                            <label for="sonstiges" class="check-option">
+                                <span class="custom-check"></span>
+                                etwas Anderes
+                            </label>
+
+                            <div class="conditional-input">
+                                <input class="input" type="text" name="sonstiges_details"
+                                    placeholder="Bitte beschreiben Sie Ihre Anforderungen…">
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <div class="input-group">
+                        <label for="message">Projektbeschreibung</label>
+                        <textarea id="message" class="txtArea" name="projektbeschreibung" rows="4"
+                            placeholder="Beschreiben Sie Ihr Projekt kurz, aber präzise..."></textarea>
+                    </div>
+
+                    <div class="name-area">
+                        <div class="input-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="email">E-Mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+
+                    <div class="form-cta-div">
+                        <button id="submitBtn" type="submit" class="cta-btn form-cta-btn">Anfrage senden</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Success Alert -->
+            <div id="successDiv" class="form-success d-none" aria-live="polite">
+                <h3>Vielen Dank!</h3>
+                <p class="success-alert-p">Ihre Anfrage wurde erfolgreich versendet. Ich melde mich zeitnah bei Ihnen.
+                </p>
+                <button onclick="closeSuccessAlert()" class="service-btn success-alert-service-btn">Schließen</button>
+            </div>
+
+            <!-- Duplcation Submit Alert -->
+            <div id="duplicateConfirmOuter" class="form-alert-outer d-none">
+                <div id="duplicateConfirm" class="form-success form-alert" role="dialog" aria-modal="true">
+                    <p class="success-alert-p">Diese Anfrage wurde bereits gesendet. Wirklich erneut senden?</p>
+                    <div class="alert-btn-div">
+                        <button class="service-btn" id="confirmYes">Ja</button>
+                        <button class="service-btn" id="confirmNo">Abbrechen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- über mich -->
+    <div id="aboutMe"></div>
+
+
+
+    <!-- Services -->
+    <div id="services"></div>
+
+
+
+    <!-- Kontakt -->
+    <div id="contact"></div>
+
+
+
+
+
+
+
+</body>
+
+</html>

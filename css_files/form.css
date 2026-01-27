@@ -1,0 +1,297 @@
+.form-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    /* opacity: 1;
+    pointer-events: auto; */
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+.form-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+
+
+
+.form-modal {
+    background: rgba(0, 0, 0, 0.85);
+    color: antiquewhite;
+    padding: 40px;
+    max-width: 480px;
+    width: 90%;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+
+    overflow-y: auto;
+    /* vertikales Scrollen erlauben */
+    overflow-x: hidden;
+    /* horizontales Scrollen verhindern */
+     max-height: 80vh;   /* <-- Da ohne Höhenbegrenzung kein Scrollen möglich ist */ 
+}
+
+.form-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: antiquewhite;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+
+
+/* Scrollbar selbst (Breite) */
+.form-modal::-webkit-scrollbar {
+    width: 8px;          /* Breite der vertikalen Scrollbar */
+    height: 8px;         /* Breite der horizontalen Scrollbar, falls nötig */
+}
+
+/* Scrollbar Track (Hintergrund) */
+.form-modal::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* leicht transparent */
+    border-radius: 4px;
+}
+
+/* Scrollbar Thumb (der bewegliche Balken) */
+.form-modal::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4); /* weißlich, leicht transparent */
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+/* Hover-Effekt auf dem Thumb */
+.form-modal::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+
+
+
+
+.form-group {
+    border: none;
+    padding: 0;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.form-group legend {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: antiquewhite;
+}
+
+/* Klickbare Zeile */
+.check-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: antiquewhite;
+    margin-left: 45px;
+}
+
+/* echtes Checkbox-Input verstecken */
+.check-option input {
+    display: none;
+}
+
+/* Kreis */
+.custom-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid antiquewhite;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Punkt bei Auswahl */
+.check-option input:checked+.custom-check::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: antiquewhite;
+    border-radius: 50%;
+}
+
+/* Hover-Effekt */
+.check-option:hover .custom-check {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15);
+}
+
+
+.conditional-input {
+    max-height: 0;
+    overflow: hidden;
+    margin-left: 70px;
+
+    opacity: 0;
+    transform: translateY(-6px);
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.check-with-input .conditional-input {
+    max-height: 100px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/*.check-with-input input[type="checkbox"]:checked~.conditional-input {
+    max-height: 100px;
+    opacity: 1;
+    /*margin-top: 10px;*/
+/*
+} */
+
+.check-with-input input[type="checkbox"]:checked~.conditional-input {
+    max-height: 120px;
+    /* realistische Höhe */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.check-with-input input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.check-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 1rem;
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+.custom-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+
+    border: 2px solid antiquewhite;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.25s ease;
+}
+
+
+.check-with-input input[type="checkbox"]:checked+label .custom-check::after {
+    /*background-color: antiquewhite;
+  box-shadow: 0 0 0 4px rgba(250,235,215,0.25); */
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: antiquewhite;
+    border-radius: 50%;
+}
+
+/*
+.check-option:hover .custom-check {
+  box-shadow: 0 0 0 3px rgba(250,235,215,0.15);
+} */
+
+
+
+
+.input {
+    min-height: 22.5px;
+    min-width: 250px;
+    border-radius: 8px;
+}
+
+.txtArea {
+    border-radius: 8px;
+    /*min-width: 400px; */
+    min-height: 100px;
+}
+
+/*
+.name-area {
+    display: flex;
+    flex-direction: column;
+} */
+
+.name-area {
+    display: flex;
+    flex-direction: column; /* oder row, wenn nebeneinander */
+    gap: 16px; /* Abstand zwischen den Feldern */
+    margin-top: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Label über Input */
+}
+
+.input-group input {
+    width: 100%; /* Input füllt die Gruppe */
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.input-group label {
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: antiquewhite; 
+}
+
+.input-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    /*background-color: rgba(255,255,255,0.05); /* leicht transparent */
+   /* color: antiquewhite; */
+    resize: vertical; /* Nutzer kann nur die Höhe ändern */
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+
+
+.form-cta-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.form-cta-btn {
+      position: static !important; /* um position: absolute zu überschreiben */
+      background-color: white;
+}

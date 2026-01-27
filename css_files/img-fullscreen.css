@@ -1,0 +1,59 @@
+.fullscreen-img-div-outer {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  /*  backdrop-filter: blur(4px) brightness(0.63);  */
+     backdrop-filter: blur(8px) brightness(0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.fullscreen-img-div-inner {
+    position: absolute;
+  /*  top: 10vh;
+    bottom: 10vh; */
+    width: auto;
+    /*background-color: green;*/
+    /*height: 80vh; */ 
+    z-index: 1000 !important;
+    /* min-width: 50vh; */
+  /*  left: 5vw;
+    right: 5vw; */
+}
+
+.fullscreen-img {
+    height: 500px;
+    width: auto;
+}
+
+.carousel-btn.zoom-btn {
+    /*background-color: rgba(255, 255, 255, 0.22);*/
+    /*background-color: rgb(117 117 117 / 89%);*/
+    background-color: rgb(117 117 117 / 82%);
+    transform: scale(0.56);
+    /* damit kann man die größe des buttons dynamisch ändern */
+
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.carousel-btn.zoom-btn:hover {
+    background-color: rgb(85 85 85 / 89%);
+}
+
+.carousel-btn.close-btn {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    background-color: rgb(117 117 117 / 82%);
+}
+
+.carousel-btn.close-btn:hover {
+    background-color: rgb(85 85 85 / 89%);
+}

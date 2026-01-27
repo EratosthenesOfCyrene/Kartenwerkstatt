@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+body {
+    /* font-family: "Libre Baskerville"; */
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;*/
+    height: 100vh;
+    padding-top: 40px;
+    /* Wegen der Navbar */
+    background-image: url('img/bgr_img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 26%;
+    background-attachment: fixed;
+    /* Damit das Hintergrundbild nicht mitscrollt 
+    /*font-family: 'zabars', Arial, Helvetica, sans-serif;*/
+    /* Zabars ist die Wunschschrift; falls diese nicht geladen werden kann, wird Arial geladen; falls auch das nicht klappt, wird Helvetica geladen; und falls auch das nicht klappt, wird einfach eine Sreifenloe Schrift genommen*/
+    margin: 0;
+    /* Der Body hat immer eine standart-margin von 8px oder so. Deshalb muss man nochmal extra die margin auf 0 setzen. */
+
+    /* backdrop-filter: blur(1px) brightness(0.7); */
+}
+
+
+
+
+h1 {
+    font-family: "Libre Baskerville";
+    font-size: 3em;
+}
+
+h2 {
+    font-family: "Libre Baskerville";
+    font-size: 2.2em;
+}
+
+h4 {
+    font-family: "Libre Baskerville";
+    font-size: 1.1em;
+    /* margin-left: 100px; */
+}
+
+p {
+    line-height: 1.6em;
+}
+
+
+
+
+.main-nav a {
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 12px;
+
+    white-space: nowrap;
+
+    border: 2px solid transparent;
+    border-radius: 100px;
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.15s ease;
+}
+
+.main-nav a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+.main-nav {
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.51);
+
+    position: fixed;
+    z-index: 1000 !important;
+    width: 100vw;
+    top: 0;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+    /* padding-right: 16px; */
+}
+
+.main-nav ul {
+    list-style: none;
+    /* Punkte weg */
+    margin: 0;
+    /* padding: 0; */
+}
+
+.main-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    /*background-color: antiquewhite;*/
+    color: antiquewhite;
+    height: 38px;
+    width: 420px;
+    gap: 16px;
+    padding-right: 46px;
+    /* Damit die nav list nicht am rechten Rand hängt oder gar darüber hinausläuft */
+}
+
+.nav-item {
+    /*width: 100px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    /*  border-radius: 100px;
+    border: 2px solid #00000000; */
+}
+
+/*
+.nav-item:hover {
+    border: 2px solid antiquewhite;
+    cursor: pointer;
+}*/
+
+.main-nav a:hover {
+    border-color: antiquewhite;
+    background-color: #1a1a1a66;
+    /* transform: translateY(-1px);*/
+}
+
+/* Zustand wenn gescrollt */
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* undurchsichtig */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.header-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: rgba(0, 0, 0, 0.31); */
+    color: antiquewhite;
+
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.31) calc(100% - 24px),
+            rgba(0, 0, 0, 0));
+}
+
+.die-div {
+    margin-right: 11px;
+    margin-bottom: 7px;
+}
