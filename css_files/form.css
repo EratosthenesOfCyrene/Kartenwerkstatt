@@ -38,7 +38,8 @@
     /* vertikales Scrollen erlauben */
     overflow-x: hidden;
     /* horizontales Scrollen verhindern */
-     max-height: 80vh;   /* <-- Da ohne Höhenbegrenzung kein Scrollen möglich ist */ 
+    max-height: 80vh;
+    /* <-- Da ohne Höhenbegrenzung kein Scrollen möglich ist */
 }
 
 .form-close {
@@ -57,19 +58,23 @@
 
 /* Scrollbar selbst (Breite) */
 .form-modal::-webkit-scrollbar {
-    width: 8px;          /* Breite der vertikalen Scrollbar */
-    height: 8px;         /* Breite der horizontalen Scrollbar, falls nötig */
+    width: 8px;
+    /* Breite der vertikalen Scrollbar */
+    height: 8px;
+    /* Breite der horizontalen Scrollbar, falls nötig */
 }
 
 /* Scrollbar Track (Hintergrund) */
 .form-modal::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1); /* leicht transparent */
+    background: rgba(255, 255, 255, 0.1);
+    /* leicht transparent */
     border-radius: 4px;
 }
 
 /* Scrollbar Thumb (der bewegliche Balken) */
 .form-modal::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.4); /* weißlich, leicht transparent */
+    background: rgba(255, 255, 255, 0.4);
+    /* weißlich, leicht transparent */
     border-radius: 4px;
     transition: background 0.2s ease;
 }
@@ -245,18 +250,22 @@
 
 .name-area {
     display: flex;
-    flex-direction: column; /* oder row, wenn nebeneinander */
-    gap: 16px; /* Abstand zwischen den Feldern */
+    flex-direction: column;
+    /* oder row, wenn nebeneinander */
+    gap: 16px;
+    /* Abstand zwischen den Feldern */
     margin-top: 30px;
 }
 
 .input-group {
     display: flex;
-    flex-direction: column; /* Label über Input */
+    flex-direction: column;
+    /* Label über Input */
 }
 
 .input-group input {
-    width: 100%; /* Input füllt die Gruppe */
+    width: 100%;
+    /* Input füllt die Gruppe */
     padding: 8px 12px;
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -266,7 +275,7 @@
 .input-group label {
     margin-bottom: 4px;
     font-weight: 500;
-    color: antiquewhite; 
+    color: antiquewhite;
 }
 
 .input-group textarea {
@@ -275,8 +284,9 @@
     border-radius: 6px;
     border: 1px solid #ccc;
     /*background-color: rgba(255,255,255,0.05); /* leicht transparent */
-   /* color: antiquewhite; */
-    resize: vertical; /* Nutzer kann nur die Höhe ändern */
+    /* color: antiquewhite; */
+    resize: vertical;
+    /* Nutzer kann nur die Höhe ändern */
     box-sizing: border-box;
     font-family: inherit;
 }
@@ -292,6 +302,23 @@
 }
 
 .form-cta-btn {
-      position: static !important; /* um position: absolute zu überschreiben */
-      background-color: white;
+    position: static !important;
+    /* um position: absolute zu überschreiben */
+    background-color: white;
+}
+
+
+
+
+
+
+@media(max-width: 768px),
+ (max-width: 1024px) and (pointer: coarse) {
+    .form-modal {
+        max-height: 100vh;
+    }
+
+    .form-cta-btn{
+        margin-bottom: 30px;
+    }
 }

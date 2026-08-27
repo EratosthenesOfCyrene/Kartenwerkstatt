@@ -14,25 +14,38 @@
     <link rel="stylesheet" href="css_files/about-me.css">
     <link rel="stylesheet" href="css_files/services.css">
     <link rel="stylesheet" href="css_files/contact.css">
+    <link rel="stylesheet" href="css_files/mobile_elements.css">
     <link rel="stylesheet" href="css_files/general-styles.css">
     <script src="script.js" defer></script>
     <script src="js-files/form.js" defer></script>
     <script src="js-files/include.js" defer></script>
+    <script src="js-files/mobile.js" defer></script>
+    <script src="js-files/mobile-service-detail.js" defer></script>
+    <script src="js-files/services.js" defer></script>
     <script src="js-files/carousel.js" defer></script>
 
 </head>
 
 <body>
+    <div id="menuBackdrop" class="menu-backdrop"></div>
     <nav id="navBar" class="main-nav">
-        <ul class="nav-list">
-            <li class="nav-item"><a onclick="showForm()" href="#">Auftragsanfrage</a></li>
-            <li class="nav-item"><a href="#">Services</a></li>
-            <li class="nav-item"><a href="#">Über mich</a></li>
-            <li class="nav-item"><a href="#">Kontakt</a></li>
+        <ul id="navList" class="nav-list">
+            <li class="nav-item"><a onclick="showForm(), handleMobileMenuActions()" href="#">Auftragsanfrage</a></li>
+            <!-- <li onclick="setTimeout(() => handleMobileMenuActions(), 500)" class="nav-item"><a href="#serviceID">Services</a></li> -->
+            <li class="nav-item"><a href="#serviceID" onclick="closeFullscreen()" id="servicesLink">Services</a></li>
+            <li class="nav-item"><a href="#aboutID" onclick="closeFullscreen()">Über mich</a></li>
+            <li class="nav-item"><a href="#contactID" onclick="closeFullscreen()">Kontakt</a></li>
         </ul>
+
+        <div id="navTitle" class="nav-title">
+            Die Kartenwerkstatt
+        </div>
+
+        <!-- Mobile Elemente -->
+        <div id="mobileElements"></div>
     </nav>
 
-    <div class="header-div">
+    <div id="headerDiv" class="header-div">
         <div class="die-div">
             Die
         </div>
@@ -152,7 +165,7 @@
                     <input type="hidden" name="_subject" value="Neue Anfrage – Kartenprojekt">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_gotcha" style="display:none">
-                    <!-- Success Formular wen das Übermitteln der Daten geklappt hat -->
+                    <!-- Success Formular wenn das Übermitteln der Daten geklappt hat -->
                     <input type="hidden" value="https://deinedomain.de/danke.html">
 
                     <fieldset class="form-group">
@@ -280,6 +293,13 @@
 
     <!-- Kontakt -->
     <div id="contact"></div>
+
+
+
+
+
+
+
 
 
 

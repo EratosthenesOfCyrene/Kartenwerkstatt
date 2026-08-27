@@ -1,8 +1,6 @@
-
-
-
 .contact-div-inner {
-    min-height: 40vh;;
+    min-height: 40vh;
+    ;
 }
 
 .contact-p {
@@ -11,4 +9,15 @@
 
 .contact-cta-btn {
     margin-bottom: 40px;
+}
+
+
+
+
+@media(max-width: 768px),
+ (max-width: 1024px) and (pointer: coarse) {
+    .contact-p {
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+    }
 }

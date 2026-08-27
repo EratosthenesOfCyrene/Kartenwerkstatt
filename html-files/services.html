@@ -1,11 +1,11 @@
-<div class="about-div-outer">
+<div id="serviceID" class="about-div-outer">
     <div class="about-div-inner">
         <h2>Services</h2>
         <div class="about-div-inner-txt services-div-inner-txt">
             <section class="services">
 
 
-                <div class="service-card">
+                <div class="service-card service-card-desktop">
                     <div class="card-inner">
                         <!-- Vorderseite -->
                         <div class="card-front" style="background-image: url('img/karten_imgs/wegbeschreibungen.jpg')">
@@ -15,42 +15,50 @@
                         </div>
                         <!-- Rückseite -->
                         <div class="card-back" style="background-image: url('img/karten_imgs/wegbeschreibungen.jpg')">
-                            <button class="service-btn">Mehr erfahren</button>
+                            <a href="services/wegbeschreibungen.html" class="service-btn service-btn-flipcard">
+                                Mehr erfahren
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                 <div class="service-card">
+                <div class="service-card service-card-desktop">
                     <div class="card-inner">
                         <!-- Vorderseite -->
-                        <div class="card-front" style="background-image: url('img/karten_imgs/historische_karte_small.png')">
+                        <div class="card-front"
+                            style="background-image: url('img/karten_imgs/historische_karte_small.png')">
                             <div class="service-overlay">
                                 <h3>Wissenschaftliche Forschung</h3>
                             </div>
                         </div>
                         <!-- Rückseite -->
-                        <div class="card-back" style="background-image: url('img/karten_imgs/historische_karte_small.png')">
+                        <div class="card-back"
+                            style="background-image: url('img/karten_imgs/historische_karte_small.png')">
                             <button class="service-btn">Mehr erfahren</button>
                         </div>
                     </div>
                 </div>
 
-                 <div class="service-card">
+                <div class="service-card service-card-desktop">
                     <div class="card-inner">
                         <!-- Vorderseite -->
-                        <div class="card-front" style="background-image: url('img/karten_imgs/karte_wissenschaftl_publiktionen.jpg')">
+                        <div class="card-front"
+                            style="background-image: url('img/karten_imgs/karte_wissenschaftl_publiktionen.jpg')">
                             <div class="service-overlay">
                                 <h3>Wissenschaftliche Publikationen</h3>
                             </div>
                         </div>
                         <!-- Rückseite -->
-                        <div class="card-back" style="background-image: url('img/karten_imgs/karte_wissenschaftl_publiktionen.jpg')">
-                            <button class="service-btn">Mehr erfahren</button>
+                        <div class="card-back"
+                            style="background-image: url('img/karten_imgs/karte_wissenschaftl_publiktionen.jpg')">
+                            <a href="services/wissenschaftliche-publikationen.html" class="service-btn service-btn-flipcard">
+                                Mehr erfahren
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                 <div class="service-card">
+                <div class="service-card service-card-desktop">
                     <div class="card-inner">
                         <!-- Vorderseite -->
                         <div class="card-front" style="background-image: url('img/karten_imgs/karten_fuer_museen.jpg')">
@@ -65,7 +73,7 @@
                     </div>
                 </div>
 
-                 <div class="service-card">
+                <div class="service-card service-card-desktop">
                     <div class="card-inner">
                         <!-- Vorderseite -->
                         <div class="card-front" style="background-image: url('img/karten_imgs/historische_karten.jpg')">
@@ -92,51 +100,116 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <div class="service-card" data-img="img/karten_imgs/wegbeschreibungen.jpg">
+                <!-- Service Cards for Mobile -->
+                <div class="service-card service-card-mobile" data-img="img/karten_imgs/wegbeschreibungen.jpg">
                     <div class="service-overlay">
                         <h3>Wegbeschreibungen</h3>
-                        <button class="service-btn">Mehr erfahren</button>
+                        <button onclick="openServiceDetailAndScroll('serviceDetail_Wegbeschreibungen', 'remove')"
+                            class="service-btn">Mehr erfahren</button>
                     </div>
                 </div>
 
-                <div class="service-card" data-img="img/karten_imgs/historische_karte_small.png">
+                <div id="serviceDetail_Wegbeschreibungen" class="service-detail d-none">
+                    <h2>Wegbeschreibungen</h2>
+                    <p class="service-detail-p">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam cum aspernatur veniam. Illo quasi
+                        possimus quas fuga deleniti libero iure delectus nobis optio. Explicabo illum culpa sapiente
+                        perspiciatis, laborum nulla.
+                    </p>
+                    <div class="service-detail-beispielbild-div">
+                        <img class="service-detail-beispielbild" src="img/karten_imgs/wegbeschreibungen.jpg" alt="">
+                        <div class="service-detail-beispielbild-txt-div">Beispielbild</div>
+                    </div>
+                    <div class="service-detail-beispielbild-div">
+                        <img class="service-detail-beispielbild" src="img/karten_imgs/wegbeschreibungen.jpg" alt="">
+                        <div class="service-detail-beispielbild-txt-div">Beispielbild</div>
+                    </div>
+                    <button onclick="showForm()" class="cta-btn cta-btn-carousel cta-btn-service-deatail">Auftrag
+                        anfragen</button>
+                </div>
+
+                <div class="service-card service-card-mobile" data-img="img/karten_imgs/historische_karte_small.png">
                     <div class="service-overlay">
                         <h3>Wissenschaftliche Forschung</h3>
-                        <button class="service-btn">Mehr erfahren</button>
+                        <button
+                            onclick="openServiceDetailAndScroll('serviceDetail_Wissenschaftliche_Forschung', 'remove')"
+                            class="service-btn">Mehr erfahren</button>
                     </div>
                 </div>
 
-                <div class="service-card" data-img="img/karten_imgs/karte_wissenschaftl_publiktionen.jpg">
+                <div id="serviceDetail_Wissenschaftliche_Forschung" class="service-detail d-none">
+                    <h2>Wissenschaftliche Forschung</h2>
+                    <p class="service-detail-p">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam cum aspernatur veniam. Illo quasi
+                        possimus quas fuga deleniti libero iure delectus nobis optio. Explicabo illum culpa sapiente
+                        perspiciatis, laborum nulla.
+                    </p>
+                    <div class="service-detail-beispielbild-div">
+                        <img class="service-detail-beispielbild" src="img/karten_imgs/historische_karte_small.png"
+                            alt="">
+                        <div class="service-detail-beispielbild-txt-div">Beispielbild</div>
+                    </div>
+                    <div class="service-detail-beispielbild-div">
+                        <img class="service-detail-beispielbild" src="img/karten_imgs/historische_karte_small.png"
+                            alt="">
+                        <div class="service-detail-beispielbild-txt-div">Beispielbild</div>
+                    </div>
+                    <button onclick="showForm()" class="cta-btn cta-btn-carousel cta-btn-service-deatail">Auftrag
+                        anfragen</button>
+                </div>
+
+
+                <div class="service-card service-card-mobile"
+                    data-img="img/karten_imgs/karte_wissenschaftl_publiktionen.jpg">
                     <div class="service-overlay">
                         <h3>Wissenschaftliche Publikationen</h3>
-                        <button class="service-btn">Mehr erfahren</button>
+                        <button
+                            onclick="openServiceDetailAndScroll('serviceDetail_Wissenschaftliche_Publikationen', 'remove')"
+                            class="service-btn">Mehr erfahren</button>
                     </div>
                 </div>
 
-                <div class="service-card" data-img="img/karten_imgs/karten_fuer_museen.jpg">
+                <div id="serviceDetail_Wissenschaftliche_Publikationen" class="service-detail d-none">
+                    <h2>Wissenschaftliche Publikationen</h2>
+                    <p class="service-detail-p">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam cum aspernatur veniam. Illo quasi
+                        possimus quas fuga deleniti libero iure delectus nobis optio. Explicabo illum culpa sapiente
+                        perspiciatis, laborum nulla.
+                    </p>
+                    <div class="service-detail-beispielbild-div">
+                        <img class="service-detail-beispielbild"
+                            src="img/karten_imgs/karte_wissenschaftl_publiktionen.jpg" alt="">
+                        <div class="service-detail-beispielbild-txt-div">Beispielbild</div>
+                    </div>
+                    <div class="service-detail-beispielbild-div">
+                        <img class="service-detail-beispielbild"
+                            src="img/karten_imgs/karte_wissenschaftl_publiktionen.jpg" alt="">
+                        <div class="service-detail-beispielbild-txt-div">Beispielbild</div>
+                    </div>
+                    <button onclick="showForm()" class="cta-btn cta-btn-carousel cta-btn-service-deatail">Auftrag
+                        anfragen</button>
+                </div>
+
+
+                <div class="service-card service-card-mobile" data-img="img/karten_imgs/karten_fuer_museen.jpg">
                     <div class="service-overlay">
                         <h3>Karten für Museen</h3>
                         <button class="service-btn">Mehr erfahren</button>
                     </div>
+
+                    <div class="service-detail">
+
+                    </div>
                 </div>
 
-                <div class="service-card" data-img="img/karten_imgs/historische_karten.jpg">
+                <div class="service-card service-card-mobile" data-img="img/karten_imgs/historische_karten.jpg">
                     <div class="service-overlay">
                         <h3>Historische Karten</h3>
                         <button class="service-btn">Mehr erfahren</button>
+                    </div>
+
+                    <div class="service-detail">
+
                     </div>
                 </div>
 

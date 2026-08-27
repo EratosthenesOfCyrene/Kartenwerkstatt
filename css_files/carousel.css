@@ -22,7 +22,8 @@
     flex-direction: column;
 
     border-radius: 12px;
-    position: relative; /* Weil der carousel-shadow-layer sonst alles durcheinander wirft */ 
+    position: relative;
+    /* Weil der carousel-shadow-layer sonst alles durcheinander wirft */
 
 
 }
@@ -33,10 +34,10 @@
     position: absolute;
     inset: 0;
     border-radius: 12px;
-  /*  pointer-events: none;  */ 
+    /*  pointer-events: none;  */
     background-color: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(2.5px) brightness(0.9);
-     height: 550px;
+    height: 550px;
     /*width: 850px;*/
     width: 1400px;
 
@@ -54,7 +55,7 @@
         transform 0.2s ease;
 }
 
-/*.carousel-slide-outer:hover { */ 
+/*.carousel-slide-outer:hover { */
 .carousel-shadow-layer:hover {
     box-shadow:
         /*  0px 0px 19px rgba(0, 0, 0, 1),
@@ -287,11 +288,16 @@
 
 .cta-btn:disabled {
     cursor: not-allowed;
-    pointer-events: none; /* Verhindert Hover & Klick */
-    opacity: 0.6;         /* optional, damit er visuell deaktiviert wirkt */
-    background-color: #ccc; /* optional, grauer Hintergrund */
-    color: #666;            /* optional */
-    box-shadow: none;       /* optional, um den Hover-Effekt zu neutralisieren */
+    pointer-events: none;
+    /* Verhindert Hover & Klick */
+    opacity: 0.6;
+    /* optional, damit er visuell deaktiviert wirkt */
+    background-color: #ccc;
+    /* optional, grauer Hintergrund */
+    color: #666;
+    /* optional */
+    box-shadow: none;
+    /* optional, um den Hover-Effekt zu neutralisieren */
 }
 
 .cta-btn-carousel {
@@ -302,6 +308,78 @@
 
 /* --------Mobile Design--------- */
 
-@media (max-width: 500px) {
+@media (max-width: 1024px) and (pointer: coarse) {
+    .slide-img {
+        height: 90vh;
+        width: auto;
+    }
+
+    .carousel-slide-outer {
+        width: 100vw;
+        height: 540px;
+    }
+
+    .carousel-shadow-layer {
+        width: 100vw;
+        height: auto;
+    }
+
+    .carousel-slide-btn-div {
+        width: 100vw;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    .carousel-slide-small {
+        display: none !important;
+    }
     
+    .slide-txt {
+        line-height: 1em;
+    }
+
+
+
+}
+
+@media (max-width: 768px),
+/*(max-width: 1024px) and (pointer: coarse)*/
+    {
+    .carousel-slide-outer {
+        width: 100vw;
+        height: 440px;
+    }
+
+    .carousel-shadow-layer {
+        width: 100vw;
+        height: auto;
+    }
+
+    .carousel-slide-btn-div {
+        width: 100vw;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    .carousel-slide-small {
+        display: none !important;
+    }
+
+    .slide-img {
+        width: 90vw;
+        max-width: 90vw;
+        height: auto;
+    }
+
+    .slide-txt-div {
+        width: 90vw;
+    }
+
+    .slide-txt {
+        line-height: 1em;
+    }
 }

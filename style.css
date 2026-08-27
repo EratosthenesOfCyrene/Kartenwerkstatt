@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     /* font-family: "Libre Baskerville"; */
     /*display: flex;
@@ -22,6 +26,87 @@ body {
     /* Der Body hat immer eine standart-margin von 8px oder so. Deshalb muss man nochmal extra die margin auf 0 setzen. */
 
     /* backdrop-filter: blur(1px) brightness(0.7); */
+}
+
+body.no-scroll {
+    overflow: hidden;
+    touch-action: none;
+    position: fixed;
+    padding-right: var(--scrollbar-width);
+}
+
+.show-element {
+    display: flex !important;
+}
+
+.nav-bar-selection-menu-color {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+}
+
+.menu-backdrop {
+    /*
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    z-index: 1000;
+    transition: background-color 0.3s ease /*, backdrop-filter 0.3s ease, box-shadow 0.3s ease ; */
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    z-index: 1000;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease,
+        visibility 0s linear 0.3s;
+}
+
+.menu-backdrop-is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.nav-list-is-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.nav-title {
+    position: absolute;
+    /*left: 16px;*/
+    left: 3em;
+
+    font-family: "Libre Baskerville";
+    font-size: 14px;
+    color: antiquewhite;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+}
+
+.nav-title.is-visible {
+    opacity: 1;
 }
 
 
@@ -85,8 +170,20 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+    /* transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; */
+    /*transition:
+        transform 0.35s ease,
+        background-color 0.3s ease,
+        backdrop-filter 0.3s ease,
+        box-shadow 0.3s ease;*/
+    transition: transform 0.4s cubic-bezier(.4, 0, .2, 1);
+
+    will-change: transform;
     /* padding-right: 16px; */
+}
+
+.main-nav.is-hidden {
+    transform: translateY(-100%);
 }
 
 .main-nav ul {
@@ -107,11 +204,12 @@ p {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 50vw;
+    /*width: 50vw;*/
     /*background-color: antiquewhite;*/
     color: antiquewhite;
     height: 38px;
-    width: 420px;
+    /* width: 420px;*/
+    width: min(420px, 100vw);
     gap: 16px;
     padding-right: 46px;
     /* Damit die nav list nicht am rechten Rand hängt oder gar darüber hinausläuft */
@@ -164,4 +262,65 @@ p {
 .die-div {
     margin-right: 11px;
     margin-bottom: 7px;
+}
+
+
+
+
+
+/* ------ Mobile -------*/
+
+@media (max-width: 768px),
+(max-width: 1024px) and (pointer: coarse) {
+    body {
+        /* background-attachment: scroll; */
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.82em;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 1.21em;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 50px;
+    }
+
+    .nav-list {
+        /*display: none;*/
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: opacity 0.14s ease,
+            visibility 0s linear 0.14s;
+
+        position: fixed;
+        top: 40px;
+        /* unter deiner Navbar */
+        left: 0;
+        width: 100vw;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+
+        padding: 24px 0;
+
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 1001;
+
+        height: auto;
+    }
+
+    .header-div {
+        padding-top: 2em;
+        padding-bottom: 1.5em;
+    }
 }

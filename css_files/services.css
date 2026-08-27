@@ -100,11 +100,31 @@
 }
 
 .service-btn:hover {
-  /*  background: antiquewhite; */
+    /*  background: antiquewhite; */
     /*color: black; */
 
     color: rgb(253, 241, 226);
     background-color: rgba(0, 0, 0, 0.76);
+}
+
+.service-btn-flipcard {
+   /* height: 10px;*/
+    text-decoration: none;
+}
+
+a.service-btn {
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font: inherit;
+    font-family: arial;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 13.333px;
+    box-sizing: border-box  /* Sonst wird der button zu hoch */
 }
 
 
@@ -185,4 +205,111 @@
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 10px;
+}
+
+.service-card-desktop {
+    display: block;
+}
+
+.service-card-mobile {
+    display: none;
+}
+
+
+
+.service-detail {
+    /* background-color: #8b8989; */
+    background-color: #8b8989c2;
+
+    /* min-height: 50vh; */
+    width: 90vw;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2.3em;
+}
+
+.service-detail-p {
+    margin: 0.9em;
+    /*color: antiquewhite;*/
+    color: #f9efe2;
+}
+
+.service-detail-beispielbild-div {
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.service-detail-beispielbild {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.service-detail-beispielbild-txt-div {
+    position: absolute;
+    backdrop-filter: blur(2.5px);
+    color: grey;
+    padding: 0.2em;
+    padding-left: 0.3em;
+    border-radius: 0.9em;
+    font-size: 0.9em;
+}
+
+.cta-btn-service-deatail {
+    bottom: auto;
+    position: relative;
+    margin-bottom: 2em;
+    margin-top: 2.3em;
+
+}
+
+
+
+
+
+
+/* ------ Mobile -------*/
+
+@media (max-width: 1024px) and (pointer: coarse) {
+    .services {
+        /* width: 90vw;*/
+        width: 400px;
+    }
+
+    .service-card-mobile {
+        display: block;
+    }
+
+
+    .service-card-desktop {
+        display: none;
+    }
+
+    .service-detail-beispielbild-div {
+        width: auto;
+    }
+
+    .service-detail-beispielbild {
+        height: 90vh;
+        width: auto;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .services {
+        width: auto;
+    }
+
+    .service-detail-beispielbild {
+        height: auto;
+        width: 100%;
+    }
 }
