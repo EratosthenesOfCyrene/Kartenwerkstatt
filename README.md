@@ -6,6 +6,14 @@ The website presents examples of my cartographic work and is designed to give po
 
 What I like most about this project ist that it combines my experience in cartography and QGIS with practical web development using HTML, CSS and Vanilla JavaScript.
 
+## Preview
+
+![Kartenwerkstatt overview](./assets/Screenshot_main.png)
+
+### Detail view
+
+![Kartenwerkstatt detail](./assets/Screenshot_detail.png)
+
 ## Project status
 
 This project is currently under active development.
