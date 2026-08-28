@@ -8,7 +8,7 @@ What I like most about this project ist that it combines my experience in cartog
 
 ## Preview
 
-![Kartenwerkstatt overview](./assets/Screenshot_main.png)
+![Kartenwerkstatt overview](./assets/Screenshot_main_1.png)
 
 ### Detail view
 
