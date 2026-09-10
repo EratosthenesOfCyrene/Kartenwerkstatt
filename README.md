@@ -22,7 +22,7 @@ The core website structure and map presentation are already implemented, while a
 
 ## Purpose
 
-I created this website to present my cartographic work in a clear and visually appealing way and to provide potential clients with an impression of my services.
+I created this website to present my cartographic work in a clear and visually appealing way in order to provide potential clients with an impression of my services.
 
 Its main goals are:
 
