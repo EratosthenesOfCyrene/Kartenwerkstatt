@@ -33,8 +33,7 @@ Its main goals are:
 
 ## Features
 
-- Portfolio-style presentation of map examples
-- Interactive navigation between maps
+- Presentation of map examples in an automatic but navigable carousel
 - Large clickable main map view with neighbouring previews
 - Previous / next navigation
 - Zoom functionality
