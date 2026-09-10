@@ -36,11 +36,10 @@ Its main goals are:
 - Presentation of map examples in an automatic but navigable carousel
 - Large clickable main map view with neighbouring previews
 - Previous / next navigation
-- Zoom functionality
-- Fullscreen map view
-- Responsive layout
-- Dynamic updates of displayed content
-- User-oriented presentation of visual material
+- Zoom functionality of the clicked map example with fullscreen map view
+- Responsive layout of the entire Kartenwerkstatt website including all its subsites
+- Dynamic updates of displayed content within the carousel
+- User-oriented presentation of map examples
 
 ## Technologies
 
@@ -57,7 +56,7 @@ Its main goals are:
 
 The website uses JavaScript to manage the currently displayed map and update the surrounding interface dynamically.
 
-The project includes practical experience with:
+The project gave me practical experience with:
 
 - handling UI state
 - dynamically updating visual content
